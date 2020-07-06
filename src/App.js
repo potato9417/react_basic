@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
 import MyName from './MyName';
+import Counter from './Counter';
 
 class App extends Component {
   render() {
@@ -38,6 +39,7 @@ class App extends Component {
           <p className="text">안녕 className을 이용해서 css를 넣었어!</p>
         </div>
         <MyName value="kamza" />
+        <Counter />
       </Fragment>
     );
   }
