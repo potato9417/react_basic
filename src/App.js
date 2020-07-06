@@ -37,7 +37,7 @@ class App extends Component {
           <p style={style}>안녕 스타일을 넣었어!</p>
           <p className="text">안녕 className을 이용해서 css를 넣었어!</p>
         </div>
-        <MyName />
+        <MyName value="kamza" />
       </Fragment>
     );
   }
