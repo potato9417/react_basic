@@ -1,9 +1,16 @@
 import React, { Component, Fragment } from 'react';
+import './App.css';
 
 class App extends Component {
   render() {
     const name = 'hi';
     const value = 1;
+    const style = {
+      backgroundColor: '#000',
+      padding: '16px',
+      color: '#fff',
+      fontSize: '30px'
+    };
     return (
       <Fragment>
         <div>
@@ -23,6 +30,11 @@ class App extends Component {
             }
             return <h2>없다</h2>;
           })()}
+          {/* 함수를 바로 실행하려면 (function(){})() */}
+        </div>
+        <div>
+          <p style={style}>안녕 스타일을 넣었어!</p>
+          <p className="text">안녕 className을 이용해서 css를 넣었어!</p>
         </div>
       </Fragment>
     );
