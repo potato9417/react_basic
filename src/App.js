@@ -26,7 +26,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>LifeCycle!</h1>
-        <MyComponent value={this.state.counter} />
+        {this.state.counter < 6 && <MyComponent value={this.state.counter} />}
         <button onClick={this.handleClick}>Click Me!</button>
       </div>
     );

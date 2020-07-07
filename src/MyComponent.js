@@ -27,6 +27,19 @@ class MyComponent extends React.Component {
   }
   // 특정 조건에 따라 랜더링을 막아 줄수 있는 함수(따로 최적화도 가능)
 
+  componentDidUpdate(prevProps, prevState) {
+    // console.log('componentDidUpdate');
+    if (this.props.value !== prevProps.value) {
+      console.log('value값이 바뀜!', this.props.value);
+    }
+  }
+  // 컴포넌트의 값이 업데이트 될때 실행
+
+  componentWillUnmount() {
+    console.log('bye~');
+  }
+  // 컴포넌트가 사라지게 될떄 함수 호출
+
   render() {
     return (
       <div>
