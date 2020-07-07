@@ -2,7 +2,10 @@ import React from 'react';
 import MyComponent from './MyComponent';
 
 class App extends React.Component {
-  // 컴포넌트 초기 생성
+  state = {
+    counter: 1
+  };
+
   constructor(props) {
     super(props);
     console.log('constructor');
@@ -15,13 +18,16 @@ class App extends React.Component {
     console.log('componentDidMount');
   }
 
-  // 컴포넌트 업데이트
+  handleClick = () => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
 
   render() {
     return (
       <div>
-        <h1>안뇽!</h1>
-        <MyComponent value={5} />
+        <h1>LifeCycle!</h1>
+        <MyComponent value={this.state.counter} />
+        <button onClick={this.handleClick}>Click Me!</button>
       </div>
     );
   }

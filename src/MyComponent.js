@@ -6,6 +6,7 @@ class MyComponent extends React.Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('getDerivedStateFromProps');
     if (prevState.value !== nextProps.value) {
       return {
         value: nextProps.value
@@ -16,6 +17,15 @@ class MyComponent extends React.Component {
   // static(정적)함수는 class에 대한 정적 매소드를 정의함 => 객체 생성,복제
   // nextProps : 다음으로 받아올 props 값
   // prevState : 현재 업데이트 되기전의 state 값
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate');
+    if (nextProps.value === 5) {
+      return false;
+    }
+    return true;
+  }
+  // 특정 조건에 따라 랜더링을 막아 줄수 있는 함수(따로 최적화도 가능)
 
   render() {
     return (
