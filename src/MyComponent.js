@@ -43,6 +43,7 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
+        {this.state.error.type}
         <p>props : {this.props.value}</p>
         <p>state : {this.state.value}</p>
       </div>

@@ -3,8 +3,17 @@ import MyComponent from './MyComponent';
 
 class App extends React.Component {
   state = {
-    counter: 1
+    counter: 1,
+    error: false
   };
+
+  componentDidCatch(error, info) {
+    console.log('error : ', error);
+    console.log('info : ', info);
+    this.setState({ error: true });
+  }
+  // 에러가 발생할수 있는 component의 부모 component에 입력!!!
+  // 추후에 API를 통해서 서버로 오류내용 날리기 하면서 오류 분석
 
   constructor(props) {
     super(props);
@@ -23,6 +32,13 @@ class App extends React.Component {
   };
 
   render() {
+    if (this.state.error) {
+      return (
+        <div>
+          <p>에러가 났어요ㅠㅠ</p>
+        </div>
+      );
+    }
     return (
       <div>
         <h1>LifeCycle!</h1>
