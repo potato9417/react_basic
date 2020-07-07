@@ -1,6 +1,8 @@
 import React from 'react';
+import MyComponent from './MyComponent';
 
 class App extends React.Component {
+  // 컴포넌트 초기 생성
   constructor(props) {
     super(props);
     console.log('constructor');
@@ -11,14 +13,15 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log('componentDidMount');
-    console.log(this.myDiv.getBoundingClientRect());
   }
+
+  // 컴포넌트 업데이트
 
   render() {
     return (
-      <div ref={ref => (this.myDiv = ref)}>
-        {/* ref : 특정 돔에 작업을 하고 싶을때 사용 => 돔에 id를 붙여주는것과 비슷 / 돔에 refenence(참고)를 붙여주는것과 같음  */}
+      <div>
         <h1>안뇽!</h1>
+        <MyComponent value={5} />
       </div>
     );
   }
